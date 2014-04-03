@@ -1,0 +1,28 @@
+{
+  "name": "levelup-riak",
+  "version": "0.0.0",
+  "description": "A levelup-esque interface to riak",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/fritzy/levelup-riak.git"
+  },
+  "keywords": [
+    "level",
+    "levelup",
+    "riak",
+    "db"
+  ],
+  "author": "Nathan Fritz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fritzy/levelup-riak/issues"
+  },
+  "homepage": "https://github.com/fritzy/levelup-riak",
+  "dependencies": {
+    "riakpbc": "^1.2.7"
+  }
+}
