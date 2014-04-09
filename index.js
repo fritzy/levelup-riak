@@ -3,9 +3,10 @@ var stream = require('stream');
 var util = require('util');
     
 function reverseString(sin) {
+    sin = String(sin);
     var out = '';
     for (var idx = 0, l = sin.length; idx < l; idx++) { 
-        out += String.fromCharCode(255 - sin[idx].charCodeAt())
+        out += String.fromCharCode(~ sin[idx].charCodeAt() & 0x7F)
     }
     return out;
 }
@@ -251,8 +252,8 @@ function LevelUpRiak(riak_conf, options, callback) {
                 index: opts.index,
                 pagination_sort: true,
                 qtype: 1,
-                range_min: opts.end,
-                range_max: opts.start,
+                range_min: opts.start,
+                range_max: opts.end,
                 bucket: opts.bucket || 'default_levelup'
             }
             if (opts.limit !== -1) args.max_result = opts.limit;
